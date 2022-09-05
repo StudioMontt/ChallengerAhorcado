@@ -1,0 +1,80 @@
+body {
+	font-family: 'Open+Sans', sans-serif;
+    background: #c2c2c2;
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+#logo{
+	display: block;
+	height: 2em;
+	padding: 20px;
+}
+
+.advertencia{
+	padding: 10px;
+	margin-left: 100px;
+	font-size: small;
+	color: white;
+	height: 15px;
+}
+
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+    background: url(Imagenes/bg.jpg);
+    padding: 10px;
+}
+
+.copyrigth{
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 480px){
+	body{
+		width: auto;
+	}
+
+	.ladoingreso, .ladoresultado{
+		display: block;
+		width: 100%;
+		overflow-wrap: break-word;
+	}
+
+	#codificado{
+		margin: 0 auto 20px;
+	}
+	.advertencia, .botones, #decodificado, #muneco{
+		margin: 5px auto;
+		text-align: center;
+	}
+
+	#decodificado, #muneco{
+		position: static;
+		height: 100px;
+		margin: 10px auto;
+		padding: 5px;
+	}
+
+	#decodificado{
+		width: 80%;
+		height: 120px;
+	}
+
+	#muneco img{
+		display: none;
+	}
+
+	button{
+		margin: 2px auto;
+	}
+}
