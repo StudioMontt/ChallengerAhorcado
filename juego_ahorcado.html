@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img id="logo" src="imagenes/LogoAlura.png" alt="Logo Alura">
+    <canvas width="320px" height="380px"> </canvas>
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //PLANO DEL LIENZO
+        pincel.fillStyle = "#A9A9A9";
+        pincel.fillRect(0,0,300,380);
+
+        //MASTIL
+        pincel.fillStyle = "darkgreen";
+        pincel.fillRect(40,50,6,300);
+        pincel.beginPath();
+        pincel.moveTo(43,320);
+        pincel.lineTo(63,350);
+        pincel.lineTo(23,350);
+        pincel.fill();
+
+        //TRAVESAÑO
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.fillRect(40,50,119,6);
+        pincel.fill();
+        pincel.strokeStyle = "black";
+        pincel.lineWidth = 2;
+        pincel.beginPath();
+        pincel.arc(163, 53, 5, 0, 2*3.14);
+        pincel.stroke();
+
+        //CUERDA
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.fillRect(161,56,4,30);
+        pincel.fill();
+
+        //CABEZA
+        pincel.strokeStyle = "blue";
+        pincel.lineWidth = 6;
+        pincel.beginPath();
+        pincel.arc(163, 110, 25, 0, 2*3.14);
+        pincel.stroke();
+
+        //CUERPO
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.fillRect(158,132,10,90);
+        pincel.fill();
+
+        //BRAZO DERECHO
+        pincel.strokeStyle = "red";
+        pincel.lineWidth = 6;
+        pincel.beginPath();
+        pincel.moveTo(160,145);
+        pincel.lineTo(120,200);
+        pincel.stroke();
+
+        //BRAZO IZQUIERDO
+        pincel.strokeStyle = "red";
+        pincel.lineWidth = 6;
+        pincel.beginPath();
+        pincel.moveTo(166,145);
+        pincel.lineTo(206,200);
+        pincel.stroke();
+
+        //PIERNA DERECHA
+        pincel.strokeStyle = "red";
+        pincel.lineWidth = 6;
+        pincel.beginPath();
+        pincel.moveTo(160,220);
+        pincel.lineTo(120,300);
+        pincel.stroke();
+
+        //PIERNA IZQUIERDA
+        pincel.strokeStyle = "red";
+        pincel.lineWidth = 6;
+        pincel.beginPath();
+        pincel.moveTo(166,220);
+        pincel.lineTo(206,300);
+        pincel.stroke();
+    </script>
+
+    <div class="botones">
+        <button type="button" id="NewGame">Nuevo Juego</button>
+        <button type="button" id="Desist">Desistir</button>
+    </div>
+
+</body>
+
+<footer>
+    <p class="copyrigth">&copy Creado por Marcelo Vargas P. (2022)</p>
+</footer>
+
+</html>

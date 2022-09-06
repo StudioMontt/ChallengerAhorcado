@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Challenger - Ahorcado</title>
+    <title>Ahorcado - Palabra</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -13,10 +13,13 @@
 
 <body>
     <img id="logo" src="imagenes/LogoAlura.png" alt="Logo Alura">
-
-    <section  class="inicio">    
-            <button type="button" id="Play">Iniciar Juego</button>
-            <button type="button" id="NewWord">Agregar nueva palabra</button>
+    <section class="Word">
+        <textarea id="nuevapalabra" placeholder="Ingrese una palabra"></textarea>
+        <p class="advertencia"><img src="Imagenes/Vector.png" height="70%">   Máx. 8 letras.</p>
+        <div class="botones">
+            <button type="button" id="SaveContinue">Guardar y Continuar</button>
+            <button type="button" id="Cancelar">Cancelar</button>
+        </div>
     </section>
 </body>
 
@@ -25,5 +28,3 @@
 </footer>
 
 </html>
-
-<script src="javascript.js"></script>
