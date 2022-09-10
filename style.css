@@ -1,53 +1,52 @@
 body {
 	font-family: 'Open+Sans', sans-serif;
-    background: #c2c2c2;
-    position: relative;
-    width: auto;
-    height: 400px;
+	background: #c2c2c2;
+	position: relative;
+	width: auto;
+	height: auto;
 }
 
-#logo{
+#logo {
 	display: block;
 	height: 2em;
 	padding: 20px;
 }
 
-.inicio{
-	width: 250px;
+.inicio,
+#monito {
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
 }
 
-#Play{
+#play {
 	width: 250px;
 	height: 80px;
 	border-radius: 16px;
-	margin: 70% auto 3em;
-	border: 2px solid #0A3871;
-	background: #0A3871;
+	margin: 15em auto 3em;
+	border: 2px solid #0a3871;
+	background: #0a3871;
 	color: white;
 	cursor: pointer;
 }
 
-#NewWord{
+#newWord {
 	width: 220px;
 	height: 50px;
 	border-radius: 16px;
-	margin: 0 auto 100%;
-	border: 2px solid #0A3871;
+	margin: 0 auto 14em;
+	border: 2px solid #0a3871;
 	color: blue;
 	cursor: pointer;
 }
 
-.Word{
+.word,
+.botones {
 	width: 485px;
-	display: flex;
-	flex-direction: column;
 	margin: 0 auto;
 }
 
-#nuevapalabra{
+#nuevapalabra {
 	font-size: 2em;
 	line-height: 150%;
 	margin: 10% auto 20px;
@@ -60,82 +59,56 @@ body {
 	resize: none;
 }
 
-.advertencia{
+.advertencia {
 	padding: 10px;
 	margin-left: 10px;
 	font-size: small;
 	color: white;
 	height: 15px;
 }
-/*
-.botones{
-	margin: 0 auto 20px;
-}
-*/
-#SaveContinue, #Cancelar{
+
+#saveContinue,
+#cancelar,
+#newGame,
+#desist {
 	margin: 0 auto 30px;
 	width: 220px;
 	height: 50px;
 	border-radius: 16px;
-	margin: 0 10px 44% 10px;
-	border: 2px solid #0A3871;
+	margin: 0 10px 40px;
+	border: 2px solid #0a3871;
 	color: blue;
 	cursor: pointer;
 }
 
-#SaveContinue{
-	background: #0A3871;
+#saveContinue,
+#newGame {
+	background: #0a3871;
 	color: white;
 }
 
-footer{
-    text-align: center;
-    background: url(Imagenes/bg.jpg);
-    padding: 10px;
+#palabras {
+	width: 480px;
+	background: yellow;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
 }
 
-.copyrigth{
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 5px;
+footer {
+	text-align: center;
+	background: url(Imagenes/bg.jpg);
+	padding: 10px;
 }
 
-@media screen and (max-width: 480px){
-	body{
+.copyrigth {
+	color: #ffffff;
+	font-size: 13px;
+	margin: 5px;
+}
+
+@media screen and (max-width: 480px) {
+	body {
 		width: auto;
-	}
-
-	.ladoingreso, .ladoresultado{
-		display: block;
-		width: 100%;
-		overflow-wrap: break-word;
-	}
-
-	#codificado{
-		margin: 0 auto 20px;
-	}
-	.advertencia, .botones, #decodificado, #muneco{
-		margin: 5px auto;
-		text-align: center;
-	}
-
-	#decodificado, #muneco{
-		position: static;
-		height: 100px;
-		margin: 10px auto;
-		padding: 5px;
-	}
-
-	#decodificado{
-		width: 80%;
-		height: 120px;
-	}
-
-	#muneco img{
-		display: none;
-	}
-
-	button{
-		margin: 2px auto;
 	}
 }

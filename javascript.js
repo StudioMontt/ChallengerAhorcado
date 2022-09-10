@@ -1,5 +1,26 @@
+var serieword = ["TECLADO", "PANTALLA", "CANVAS", "MONITOR", "HTML", "SCRIPT"];
+var wordSecret = "";
+
+function choose() {
+  var random = Math.round(Math.random() * serieword.length);
+  var word = serieword[random];
+
+  wordSecret = word;
+  begin()
+  letterSpace()
+
+  console.log(wordSecret);
+
+}
+
+/*//ESPACIOS LETRAS
+pincel.moveTo(50,550);
+pincel.lineTo(50,550)
+pincel.stroke();
+
+
 function codificar(){
-    
+
     var oracion = document.getElementById("codificado").value;
     var oracion=oracion.replace(/e/mgi, "enter");
     var oracion=oracion.replace(/i/mgi, "imes");
@@ -41,3 +62,4 @@ var click3=document.querySelector("#botonCopiar");
 click1.onclick=codificar;
 click2.onclick=decodificar;
 click3.onclick=copiar;
+*/
