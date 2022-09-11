@@ -16,9 +16,11 @@ function choose() {
 }
 
 function pressLetters() {
-	presionLetra = prompt(String.fromCharCode(event.keyCode));
+	presionLetra = String.fromCharCode(event.keyCode)
 	console.log(presionLetra);
 }
+
+window.onkeydown(pressLetters)
 
 function SoloLetras(e) {
 	key = e.keyCode || e.which;
@@ -41,7 +43,7 @@ function SoloLetras(e) {
 }
 
 function mastil() {
-	if (presionLetra == 'F') {
+	if (presionLetra == 70) {
 		//MASTIL
 		pincel.fillRect(40, 50, 6, 300);
 		pincel.beginPath();
