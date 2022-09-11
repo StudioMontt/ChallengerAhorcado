@@ -1,6 +1,6 @@
-let tablero = document.getElementById('palabras').getContext('2d');
+var tablero = document.getElementById('palabras').getContext('2d');
 
-function letterSpace() {
+function lettersSpace() {
 	//ESTILOS
 	tablero.fillStyle = 'red';
 	tablero.strokeStyle = 'red';
@@ -9,24 +9,25 @@ function letterSpace() {
 	tablero.lineJoin = 'round';
 
 	//ESPACIO DE CADA LETRA
-	let space = 260 / wordSecret.length;
-	for (let i = 0; i < wordSecret.length; i++) {
-		tablero.moveTo(20 + space * i, 50);
-		tablero.lineTo(45 + space * i, 50);
+	var spaceLetters = 260 / wordSecret.length;
+
+	for (var i = 0; i < wordSecret.length; i++) {
+		tablero.moveTo(20 + spaceLetters * i, 50);
+		tablero.lineTo(45 + spaceLetters * i, 50);
 	}
 
 	tablero.stroke();
 	tablero.closePath();
-	console.log(space);
+	console.log(spaceLetters);
 	console.log(i);
 }
 
-let pincel = document.getElementById('monito').getContext('2d');
+var pincel = document.getElementById('monito').getContext('2d');
 
 function begin() {
 	//ESTILOS
-	pincel.fillStyle = 'black';
-	pincel.strokeStyle = 'black';
+	pincel.fillStyle = 'blue';
+	pincel.strokeStyle = 'blue';
 	pincel.lineWidth = 4;
 	pincel.lineCap = 'round';
 	pincel.lineJoin = 'round';
@@ -41,13 +42,8 @@ function begin() {
 	pincel.closePath();
 }
 
-//MASTIL
-pincel.fillRect(40, 50, 6, 300);
-pincel.beginPath();
-pincel.moveTo(43, 320);
-pincel.lineTo(63, 350);
-pincel.lineTo(23, 350);
-pincel.fill();
+
+
 
 //TRAVESAÑO
 pincel.beginPath();
