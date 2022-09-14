@@ -42,9 +42,6 @@ function begin() {
 	pincel.closePath();
 }
 
-
-
-
 //TRAVESAÑO
 pincel.beginPath();
 pincel.fillRect(40, 50, 119, 6);
