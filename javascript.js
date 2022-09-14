@@ -1,62 +1,70 @@
 var serieword = ['TECLADO', 'PANTALLA', 'CANVAS', 'MONITOR', 'HTML', 'SCRIPT'];
 var wordSecret = '';
-var presionLetra = '';
+var tecla = '';
+var letrasValidas = '';
+var teclaValida = '';
+var posicionLetra = '';
 
+// Se elige automaticamente la palabra secreta.
 function choose() {
 	var random = Math.round(Math.random() * serieword.length);
-	//var word = serieword[random];
+	//var word = serieword[random];  //Opcion2
 
-	wordSecret = serieword[random]; //word;
+	wordSecret = serieword[random]; //word; //Opcion2
 	console.log(wordSecret);
-	console.log(wordSecret.length);
-	begin();
-	lettersSpace();
-	pressLetters();
-	mastil();
+	begin(); //Iniciar juego
+	lettersSpace(); //Crea los espacio para las letras
 }
 
-function pressLetters() {
-	presionLetra = String.fromCharCode(event.keyCode)
-	console.log(presionLetra);
+// Se identifica la tecla presionada.
+function pressKey(event) {
+	tecla = String.fromCharCode(event.keyCode);
+	console.log(tecla);
+	soloLetras();
 }
 
-window.onkeydown(pressLetters)
+// Valida las letras del abecedario de otros caracteres.
+function soloLetras() {
+	//	var letrasValidas = /^[A-ZÀ]+$/  //Opción 1
+	var letrasValidas = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÀ'; //Opción 2
+	//	if (tecla.match(letrasValidas)){ //Opción 1
+	if (letrasValidas.indexOf(tecla) >= 0) {
+		//Opción 2
 
-function SoloLetras(e) {
-	key = e.keyCode || e.which;
-	tecla = String.fromCharCode(key);
-	letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz';
-	especiales = array.from(wordSecret); //"8-37-39-46";
+		teclaValida = tecla;
+		document.getElementById('inputKey').innerHTML = teclaValida;
+	} else {
+		alert('Ingrese sólo letras A-Z');
+	}
+}
 
-	tecla_especial = false;
+window.onkeydown = pressKey; // ejecuta la acción al presionar la tecla.
 
-	for (var i in especiales) {
-		if (key == especiales[i]) {
-			tecla_especial = true;
-			break;
+// (Opcion A) Divide las letras en un Array
+function lasLetras() {
+	var letras = Array.from(wordSecret);
+
+	for (let i = 0; i < letras.length; i++) {
+		if (wordSecret[i] == teclaValida) {
+			console.log(wordSecret[i], ' es una letra correcta');
+			posicionLetra = i;
+			console.log('La posicion es ', i);
+		} else {
+			console.log('la letra no fue encontrada');
 		}
 	}
-
-	if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-		return false;
-	}
 }
 
-function mastil() {
-	if (presionLetra == 70) {
-		//MASTIL
-		pincel.fillRect(40, 50, 6, 300);
-		pincel.beginPath();
-		pincel.moveTo(43, 320);
-		pincel.lineTo(63, 350);
-		pincel.lineTo(23, 350);
-		pincel.fill();
-	} else {
-		console.log('Equivocado');
+// (Opcion B) Divide las letras indicando posicion y letra.
+function positionLetter() {
+	for (let i in wordSecret) {
+		//		console.log("la posicion actual es ",i," y el caracter es ",wordSecret[i]);
+		if (wordSecret[i] == teclaValida) {
+			console.log(wordSecret[i], ' es una letra correcta');
+			posicionLetra = i;
+			console.log('La posicion es ', i);
+		} else {
+			console.log('la letra no fue encontrada');
+		}
 	}
 }
-/*
-click1.onclick=codificar;
-click2.onclick=decodificar;
-click3.onclick=copiar;
-*/

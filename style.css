@@ -19,6 +19,18 @@ body {
 	margin: 0 auto;
 }
 
+#inputKey {
+	display: inline-block;
+	position: absolute;
+	left: 330px;
+	top: 460px;
+	font-size: 3em;
+	width: 402px;
+	height: 50px;
+	background: transparent;
+	border: transparent;
+	resize: none;
+}
 #play {
 	width: 250px;
 	height: 80px;
