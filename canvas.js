@@ -1,6 +1,6 @@
 var tablero = document.getElementById('palabras').getContext('2d');
 
-// Preparacón de los espacios para las letras
+// Preparación de los espacios para las letras
 function lettersSpace() {
 	//ESTILOS
 	tablero.fillStyle = 'red';
@@ -10,26 +10,41 @@ function lettersSpace() {
 	tablero.lineJoin = 'round';
 
 	//ESPACIO DE CADA LETRA
-	var spaceLetters = 260 / wordSecret.length;
+	var spaceLine = 260 / wordSecret.length;
 
 	for (var i = 0; i < wordSecret.length; i++) {
-		tablero.moveTo(20 + spaceLetters * i, 50);
-		tablero.lineTo(45 + spaceLetters * i, 50);
+		tablero.moveTo(20 + spaceLine * i, 50);
+		tablero.lineTo(45 + spaceLine * i, 50);
 	}
 
 	tablero.stroke();
 	tablero.closePath();
 }
 
+// Preparación de los espacios para la palabra
+function letrasCorrectas(lugar) {
+	tablero.font = 'bold 40px Inter';
+	tablero.lineWidth = 2;
+	tablero.lineCap = 'round';
+	tablero.lineJoin = 'round';
+	tablero.fillStyle = 'red';
+
+	//ESPACIO POR CADA LETRA DE LA PALABRA
+	var spaceLetters = 260 / wordSecret.length;
+	tablero.fillText(wordSecret[lugar], 20 + spaceLetters * lugar, 40);
+	tablero.stroke();
+}
+
+
+
 var pincel = document.getElementById('monito').getContext('2d');
 
-	//ESTILOS
-	pincel.fillStyle = 'blue';
-	pincel.strokeStyle = 'blue';
-	pincel.lineWidth = 4;
-	pincel.lineCap = 'round';
-	pincel.lineJoin = 'round';
-
+//ESTILOS
+pincel.fillStyle = 'blue';
+pincel.strokeStyle = 'blue';
+pincel.lineWidth = 4;
+pincel.lineCap = 'round';
+pincel.lineJoin = 'round';
 
 // Se dibuja la base del dibujo
 function begin() {
