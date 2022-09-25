@@ -35,8 +35,6 @@ function letrasCorrectas(lugar) {
 	tablero.stroke();
 }
 
-
-
 var pincel = document.getElementById('monito').getContext('2d');
 
 //ESTILOS

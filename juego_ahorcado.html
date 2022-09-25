@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Juego del Ahorcado</title>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="style.css" />
 		<link
@@ -17,17 +18,17 @@
 		<img id="logo" src="imagenes/LogoAlura.png" alt="Logo Alura" />
 		<canvas height="380px" id="monito"> </canvas>
 		<div class="addLetters"></div>
-		<div id="inputKey"></div>
 		<canvas height="70px" id="palabras"> </canvas>
-		<input id="erradas" />
+		<div class="letrasErradas"><input id="erradas" /></div>
 		<div class="botones">
-			<button type="button" id="newGame" onclick="choose()">Nuevo Juego</button>
+			<button type="button" id="newGame" onclick="newGame()">Nuevo Juego</button>
 			<button type="button" id="desist" onclick="location.href='index.html'">
 				Desistir
 			</button>
 		</div>
-		<script src="javascript.js"></script>
 		<script src="canvas.js"></script>
+		<script src="javascript.js"></script>
+		<script src="alerts.js"></script>
 	</body>
 
 	<footer>
