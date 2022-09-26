@@ -1,4 +1,4 @@
-var serieWord = ['TECLADO', 'PANTALLA', 'CANVAS', 'MONITOR', 'HTML', 'SCRIPT'];
+var serieWord = ['CABALLO', 'CHANCHO', 'PERRO', 'GATO', 'CONEJO', 'VACA'];
 var wordSecret = '';
 var tecla = '';
 var teclasValidas = [];
@@ -20,9 +20,7 @@ function review() {
 
 // Se elige automaticamente la palabra secreta.
 function choose() {
-	welcome();
 	console.log(serieWord);
-
 	let random = Math.round(Math.random() * serieWord.length);
 	//var word = serieWord[random];  //Opcion2
 
@@ -30,6 +28,7 @@ function choose() {
 	console.log(wordSecret);
 	begin(); //Iniciar juego
 	lettersSpace(); //Crea los espacio para las letras
+	welcome(); // PushPop de Bienvenida.
 }
 
 function newGame() {
