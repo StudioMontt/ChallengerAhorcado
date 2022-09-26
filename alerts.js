@@ -1,9 +1,11 @@
-Swal.fire({
-	title: 'Bienvenido al Juego del Ahorcado',
-	text: 'Dale a "Nuevo Juego" y adivina la palabra.',
-	confirmButtonText: 'Listo!',
-	footer: '<span class="rojo">¡Sólo teclea las letras de A-Z!</span>',
-});
+function welcome() {
+	Swal.fire({
+		title: 'Bienvenido al Juego del Ahorcado',
+		text: 'Dale a "Nuevo Juego" y adivina la palabra.',
+		confirmButtonText: 'Listo!',
+		footer: '<span class="rojo">¡Sólo teclea las letras de A-Z!</span>',
+	});
+}
 
 function gameOver() {
 	Swal.fire({
@@ -18,21 +20,10 @@ function gameOver() {
 		allowEscapeKey: true,
 		allowEnterKey: true,
 		stopKeydownPropagation: false,
-
-		//  customClass:
-		// 	container:
-		// 	popup:
-		// 	header:
-		// 	title:
-		// 	closeButton:
-		// 	icon:
-		// 	image:
-		// 	content:
-		// 	input:
-		// 	actions:
-		// 	confirmButton:
-		// 	cancelButton:
-		// 	footer:
+	}).then((result) => {
+		if (result.isConfirmed) {
+			newGame();
+		}
 	});
 }
 
@@ -41,7 +32,7 @@ function gameHappy() {
 		title: 'Felicidades!!!',
 		text: 'Espero te hayas divertido',
 		icon: 'success',
-		confirmButtonText: '¿Jugar de nuevo',
+		confirmButtonText: '¿Jugar de nuevo?',
 		footer: '<span class="rojo">¡Sólo teclea las letras de A-Z!</span>',
 		backdrop: true,
 		timer: 5000,
@@ -52,20 +43,10 @@ function gameHappy() {
 		stopKeydownPropagation: true,
 		confirmButtonColor: 'green',
 		confirmButtonAriaLabel: '¿Jugar de nuevo?',
-
-		// showCancelButton:
-		// cancelButtonText:
-		// cancelButtonColor:
-		// cancelButtonAriaLabel:
-
-		// buttonsStyling:
-		// showCloseButton:
-		// closeButtonAriaLabel:
-
-		// imageUrl:
-		// imageWidth:
-		// imageHeight:
-		// imageAlt:
+	}).then((result) => {
+		if (result.isConfirmed) {
+			newGame();
+		}
 	});
 }
 
@@ -91,6 +72,21 @@ function info() {
 		icon: 'warning',
 		toast: true,
 		position: 'bottom-end',
+		timer: 2500,
+		timerProgressBar: true,
+		allowOutsideClick: true,
+		allowEscapeKey: true,
+		allowEnterKey: true,
+		stopKeydownPropagation: true,
+		showConfirmButton: false,
+	});
+}
+
+function pAgregada() {
+	Swal.fire({
+		text: 'La palabra fue agregada con éxito!',
+		icon: 'info',
+		toast: true,
 		timer: 2500,
 		timerProgressBar: true,
 		allowOutsideClick: true,

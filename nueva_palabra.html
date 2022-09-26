@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Ahorcado - Palabra</title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Ahorcado - Palabra</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-</head>
+	<body>
+		<img id="logo" src="imagenes/LogoAlura.png" alt="Logo Alura" />
+		<section class="enterWord">
+			<textarea id="nuevaPalabra" placeholder="Ingrese una palabra"></textarea>
+			<p class="caution"><img src="Imagenes/Vector.png" height="70%" /> Máx. 9 letras.</p>
+			<div>
+				<button type="button" id="saveContinue" onclick="enterWord()">
+					Guardar y Continuar
+				</button>
+				<button type="button" id="return" onclick="location.href='index.html'">Volver</button>
+			</div>
+		</section>
+		<script src="javascript.js"></script>
+		<script src="alerts.js"></script>
+	</body>
 
-<body>
-    <img id="logo" src="imagenes/LogoAlura.png" alt="Logo Alura">
-    <section class="Word">
-        <textarea id="nuevapalabra" placeholder="Ingrese una palabra"></textarea>
-        <p class="advertencia"><img src="Imagenes/Vector.png" height="70%">   Máx. 8 letras.</p>
-        <div>
-            <button type="button" id="saveContinue">Guardar y Continuar</button>
-            <button type="button" id="cancelar"  onclick="location.href='index.html'">Cancelar</button>
-        </div>
-    </section>
-    <script src="javascript.js"></script>
-
-</body>
-
-<footer>
-    <p class="copyrigth">&copy Creado por Marcelo Vargas P. (2022)</p>
-</footer>
-
+	<footer>
+		<p class="copyrigth">&copy Creado por Marcelo Vargas P. (2022)</p>
+	</footer>
 </html>

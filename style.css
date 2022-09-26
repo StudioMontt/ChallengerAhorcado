@@ -34,6 +34,7 @@ body {
 	text-align: center;
 	padding: 20px;
 }
+
 #play {
 	width: 250px;
 	height: 80px;
@@ -55,26 +56,28 @@ body {
 	cursor: pointer;
 }
 
-.word,
+.enterWord,
 .botones {
 	width: 485px;
 	margin: 0 auto;
 }
 
-#nuevapalabra {
+#nuevaPalabra {
+	display: flex;
 	font-size: 2em;
 	line-height: 150%;
 	margin: 10% auto 20px;
 	padding-bottom: 30%;
 	color: black;
 	width: 80%;
-	height: auto;
-	background: transparent;
+	height: 100px;
+	background: gainsboro;
 	border-color: transparent;
 	resize: none;
+	align-items: center;
 }
 
-.advertencia {
+.caution {
 	padding: 10px;
 	margin-left: 10px;
 	font-size: small;
@@ -83,7 +86,7 @@ body {
 }
 
 #saveContinue,
-#cancelar,
+#return,
 #newGame,
 #desist {
 	margin: 0 auto 30px;
@@ -103,7 +106,7 @@ body {
 }
 
 #palabras {
-	width: 480px;
+	width: 500px;
 	background: transparent;
 	display: flex;
 	flex-direction: column;

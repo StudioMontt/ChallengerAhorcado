@@ -1,4 +1,5 @@
 var tablero = document.getElementById('palabras').getContext('2d');
+var xWhile=260;
 
 // Preparación de los espacios para las letras
 function lettersSpace() {
@@ -10,7 +11,7 @@ function lettersSpace() {
 	tablero.lineJoin = 'round';
 
 	//ESPACIO DE CADA LETRA
-	var spaceLine = 260 / wordSecret.length;
+	var spaceLine = xWhile / wordSecret.length;
 
 	for (var i = 0; i < wordSecret.length; i++) {
 		tablero.moveTo(20 + spaceLine * i, 50);
@@ -30,7 +31,7 @@ function letrasCorrectas(lugar) {
 	tablero.fillStyle = 'red';
 
 	//ESPACIO POR CADA LETRA DE LA PALABRA
-	var spaceLetters = 260 / wordSecret.length;
+	var spaceLetters = xWhile / wordSecret.length;
 	tablero.fillText(wordSecret[lugar], 20 + spaceLetters * lugar, 40);
 	tablero.stroke();
 }

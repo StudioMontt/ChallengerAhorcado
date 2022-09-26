@@ -1,4 +1,4 @@
-var serieword = ['TECLADO', 'PANTALLA', 'CANVAS', 'MONITOR', 'HTML', 'SCRIPT'];
+var serieWord = ['TECLADO', 'PANTALLA', 'CANVAS', 'MONITOR', 'HTML', 'SCRIPT'];
 var wordSecret = '';
 var tecla = '';
 var teclasValidas = [];
@@ -6,22 +6,30 @@ var malas = '';
 var errores = 9;
 var happy = false;
 
+// Revisa si existe un lista de palabras actualizadade la Storage.
+function review() {
+	let serieWord2 = JSON.parse(sessionStorage.getItem('palabraAgregada'));
+	if (serieWord2 !== null) {
+		if (serieWord.length !== serieWord2.length) {
+			serieWord = serieWord2;
+			choose();
+		}
+	}
+	choose();
+}
+
 // Se elige automaticamente la palabra secreta.
 function choose() {
-	//	if (errores == 0) {
-	//		if (happy === false) {
-	//		}
-	//	}
-	let random = Math.round(Math.random() * serieword.length);
-	//var word = serieword[random];  //Opcion2
+	console.log(serieWord);
 
-	wordSecret = serieword[random]; //word; //Opcion2
+	let random = Math.round(Math.random() * serieWord.length);
+	//var word = serieWord[random];  //Opcion2
+
+	wordSecret = serieWord[random]; //word; //Opcion2
 	console.log(wordSecret);
 	begin(); //Iniciar juego
 	lettersSpace(); //Crea los espacio para las letras
 }
-
-choose();
 
 function newGame() {
 	window.location.reload();
@@ -140,5 +148,20 @@ function conglatulations() {
 		happy = true;
 		//Verifica que se completó la palabra.
 		gameHappy();
+	}
+}
+
+function enterWord() {
+	let newWord = document.getElementById('nuevaPalabra').value;
+	newWord = newWord.toUpperCase();
+
+	if (newWord.length <= 9) {
+		serieWord.push(newWord);
+		console.log(serieWord);
+		sessionStorage.setItem('palabraAgregada', JSON.stringify(serieWord));
+		pAgregada();
+		console.log('La palabra', newWord, ' se agregó con éxito!');
+	} else {
+		alert('La palabra excede el máximo de letras');
 	}
 }
