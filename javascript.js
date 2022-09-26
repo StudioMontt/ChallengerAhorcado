@@ -20,6 +20,7 @@ function review() {
 
 // Se elige automaticamente la palabra secreta.
 function choose() {
+	welcome();
 	console.log(serieWord);
 
 	let random = Math.round(Math.random() * serieWord.length);
