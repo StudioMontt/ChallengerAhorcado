@@ -1,7 +1,7 @@
 function welcome() {
 	Swal.fire({
 		title: 'Bienvenido al Juego del Ahorcado',
-		text: 'Adivina la palabra relacionada con animales.',
+		text: 'Adivina la palabra relacionada con "Animales".',
 		confirmButtonText: 'Listo!',
 		footer: '<span class="rojo">¡Sólo teclea las letras de A-Z!</span>',
 	});

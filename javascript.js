@@ -33,7 +33,7 @@ function choose() {
 
 function newGame() {
 	window.location.reload();
-	choose();
+	setTimeout(choose, 1000);
 }
 
 // Descuento de las incorrectas.
@@ -161,7 +161,7 @@ function enterWord() {
 		sessionStorage.setItem('palabrasAgregadas', JSON.stringify(serieWord));
 		pAgregada();
 		console.log('La palabra', newWord, ' se agregó con éxito!');
-		document.getElementById('nuevaPalabra').innerHTML = '';
+		document.getElementById('nuevaPalabra').value = '';
 		document.getElementById('nuevaPalabra').focus();
 	} else {
 		maxLetters();
