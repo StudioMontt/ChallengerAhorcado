@@ -8,7 +8,7 @@ body {
 #logo {
 	display: block;
 	height: 2em;
-	padding: 20px;
+	padding: 10px 40px 0px;
 }
 
 .inicio,
@@ -32,7 +32,7 @@ body {
 	font-size: 2em;
 	font-weight: bold;
 	text-align: center;
-	padding: 20px;
+	padding: 10px 20px 20px;
 }
 
 #play {
@@ -67,10 +67,10 @@ body {
 	font-size: 2em;
 	line-height: 150%;
 	margin: 10% auto 20px;
-	padding-bottom: 30%;
+	padding-bottom: 20%;
 	color: black;
 	width: 80%;
-	height: 100px;
+	height: 60px;
 	background: gainsboro;
 	border-color: transparent;
 	resize: none;
@@ -91,9 +91,9 @@ body {
 #desist {
 	margin: 0 auto 30px;
 	width: 220px;
-	height: 50px;
+	height: 45px;
 	border-radius: 16px;
-	margin: 0 10px 40px;
+	margin: 0 10px 30px;
 	border: 2px solid #0a3871;
 	color: blue;
 	cursor: pointer;

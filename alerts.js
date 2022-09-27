@@ -1,7 +1,7 @@
 function welcome() {
 	Swal.fire({
 		title: 'Bienvenido al Juego del Ahorcado',
-		text: 'Dale a "Nuevo Juego" y adivina la palabra.',
+		text: 'Adivina la palabra relacionada con animales.',
 		confirmButtonText: 'Listo!',
 		footer: '<span class="rojo">¡Sólo teclea las letras de A-Z!</span>',
 	});
@@ -93,6 +93,22 @@ function pAgregada() {
 		allowEscapeKey: true,
 		allowEnterKey: true,
 		stopKeydownPropagation: true,
+		showConfirmButton: false,
+	});
+}
+
+function maxLetters() {
+	Swal.fire({
+		text: 'La palabra excede el máximo de letras',
+		icon: 'error',
+		toast: true,
+		position: 'top-center',
+		timer: 2500,
+		timerProgressBar: true,
+		allowOutsideClick: true,
+		allowEscapeKey: true,
+		allowEnterKey: true,
+		stopKeydownPropagation: false,
 		showConfirmButton: false,
 	});
 }

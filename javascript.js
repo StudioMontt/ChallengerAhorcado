@@ -158,10 +158,12 @@ function enterWord() {
 	if (newWord.length <= 9) {
 		serieWord.push(newWord);
 		console.log(serieWord);
-		sessionStorage.setItem('palabraAgregada', JSON.stringify(serieWord));
+		sessionStorage.setItem('palabrasAgregadas', JSON.stringify(serieWord));
 		pAgregada();
 		console.log('La palabra', newWord, ' se agregó con éxito!');
+		document.getElementById('nuevaPalabra').innerHTML = '';
+		document.getElementById('nuevaPalabra').focus();
 	} else {
-		alert('La palabra excede el máximo de letras');
+		maxLetters();
 	}
 }

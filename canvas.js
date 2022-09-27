@@ -1,21 +1,25 @@
 var tablero = document.getElementById('palabras').getContext('2d');
-var xWhile=260;
+var xWhile = 280;
 
 // Preparación de los espacios para las letras
 function lettersSpace() {
 	//ESTILOS
+	tablero.fillStyle = '#c2c2c2';
+	tablero.fillRect(0, 0, 500, 80);
+	tablero.stroke();
 	tablero.fillStyle = 'red';
 	tablero.strokeStyle = 'red';
-	tablero.lineWidth = 4;
+	tablero.lineWidth = 3;
 	tablero.lineCap = 'round';
 	tablero.lineJoin = 'round';
 
-	//ESPACIO DE CADA LETRA
-	var spaceLine = xWhile / wordSecret.length;
+	//ESPACIO DE CADA LETRA (_ _ _)
+	var spaceLine = (1000 * (xWhile / wordSecret.length)) / 1000;
+	console.log(spaceLine);
 
 	for (var i = 0; i < wordSecret.length; i++) {
-		tablero.moveTo(20 + spaceLine * i, 50);
-		tablero.lineTo(45 + spaceLine * i, 50);
+		tablero.moveTo(20 + spaceLine * i, 40);
+		tablero.lineTo(45 + spaceLine * i, 40);
 	}
 
 	tablero.stroke();
@@ -32,7 +36,7 @@ function letrasCorrectas(lugar) {
 
 	//ESPACIO POR CADA LETRA DE LA PALABRA
 	var spaceLetters = xWhile / wordSecret.length;
-	tablero.fillText(wordSecret[lugar], 20 + spaceLetters * lugar, 40);
+	tablero.fillText(wordSecret[lugar], 20 + spaceLetters * lugar, 30);
 	tablero.stroke();
 }
 
